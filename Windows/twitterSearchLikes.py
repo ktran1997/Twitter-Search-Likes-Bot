@@ -1,10 +1,10 @@
 import tweepy
 
 # Authenticate to Twitter
-auth = tweepy.OAuthHandler("9PW2qIcuKZfMqzbFYUbam0SZF", 
-	"rew7QnpbZF83tSkl0fh9utYTLFFPOE4VWrJGYbGioGpvwCwBIG")
-auth.set_access_token("1276279253919608832-RXKuql22i7sf7URMretU49fAcu5ZUr", 
-	"TntgXJpEq4rlzy3PT1gtbL0hLTAVI99kAKVQGIiURWBjg")
+auth = tweepy.OAuthHandler("API Key", 
+	"API Secret Key")
+auth.set_access_token("Access Token", 
+	"Access Token Secret")
 
 # Create API object
 api = tweepy.API(auth)
@@ -12,7 +12,7 @@ api = tweepy.API(auth)
 saveFile = open('getLikedTweets.txt', 'a', encoding="utf-8")
 saveFile.truncate(0)
 
-for favorite in tweepy.Cursor(api.favorites, id="Kev1n_Trxn").items(20):
+for favorite in tweepy.Cursor(api.favorites, id="Username of Person Searching").items(20):
 	saveFile.write("%s %s %s %s \n"%(
 		'Screen Name: '+str(favorite.user.screen_name)+',', 
 		'Name: '+str(favorite.user.name)+',', 

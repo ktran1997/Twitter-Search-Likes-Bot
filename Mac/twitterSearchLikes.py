@@ -12,7 +12,7 @@ api = tweepy.API(auth)
 saveFile = open('getLikedTweets.txt', 'a')
 saveFile.truncate(0)
 
-for favorite in tweepy.Cursor(api.favorites, id="Kev1n_Trxn").items(20):
+for favorite in tweepy.Cursor(api.favorites, id="Username of Person Searching").items(20):
 	saveFile.write("%s %s %s %s \n"%(
 		'Screen Name: '+str(favorite.user.screen_name)+',', 
 		'Name: '+str(favorite.user.name)+',', 
